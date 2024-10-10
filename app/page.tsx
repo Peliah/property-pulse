@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import HomeProperties from "@/components/HomeProperties";
 import InfoBoxes from "@/components/InfoBoxes";
 
-export default function Home() {
+const Home = async () => {
   return (
     <div className="">
       <Hero />
@@ -11,3 +11,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
