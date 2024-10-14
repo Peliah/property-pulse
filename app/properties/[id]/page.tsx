@@ -6,6 +6,7 @@ import PropertyHeader from '@/components/PropertyPage/PropertyHeader';
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
 import { PropertyDetails } from '@/components/PropertyPage/PropertyDetails';
+import Spinner from '@/components/Spinner';
 
 
 const PropertyPage = () => {
@@ -41,6 +42,7 @@ const PropertyPage = () => {
 
     return (
         <>
+            {loading && <Spinner loading={loading} />}
             {
                 !loading && property && (
                     <>
