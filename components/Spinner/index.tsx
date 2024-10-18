@@ -6,7 +6,12 @@ const override = {
     display: "block",
     margin: "100px auto",
 };
-const Spinner = ({ loading }) => {
+
+type SpinnerProps = {
+    loading: boolean;
+};
+
+const Spinner = ({ loading }: SpinnerProps) => {
     return (
         <ClipLoader
             color={"#3b82f6"}

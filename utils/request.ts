@@ -21,7 +21,7 @@ async function fetchProperties() {
 
 
 // Fetch single property
-async function fetchProperty(id) {
+async function fetchProperty(id: string | number) {
     try {
 
         // Handle when api domain is empty
