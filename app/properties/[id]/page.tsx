@@ -13,14 +13,14 @@ import { Property } from '@/types/property';
 const PropertyPage = () => {
     const { id } = useParams();
 
-    const [property, setProperty] = useState<Property>();
+    const [property, setProperty] = useState<Property | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchPropertyData = async () => {
             if (!id) return;
             try {
-                const property = await fetchProperty(id);
+                const property = await fetchProperty(id.toString());
                 setProperty(property);
             } catch (error) {
                 console.error('Error fetchting property: ', error);
