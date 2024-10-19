@@ -1,7 +1,7 @@
 import PropertyCard from '../PropertyCard';
 import Link from 'next/link';
 import { fetchProperties } from '@/utils/request';
-
+import { Property } from '@/types/property';
 
 
 const HomeProperties = async () => {
@@ -22,8 +22,8 @@ const HomeProperties = async () => {
                             (
                                 <p>No Properties found</p>
                             ) : (
-                                recentProperties.map(property => (
-                                    <PropertyCard key={property._id} property={property} />
+                                recentProperties.map((property: Property) => (
+                                    <PropertyCard key={property._id.toString()} property={property} />
                                 ))
                             )}
                     </div>

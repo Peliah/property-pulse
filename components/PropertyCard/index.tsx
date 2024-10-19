@@ -1,3 +1,4 @@
+import { Property } from "@/types/property";
 import Image from "next/image"
 import Link from "next/link";
 import { FaBath, FaBed, FaMoneyBill, FaRulerCombined } from "react-icons/fa";
@@ -5,7 +6,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 
 
-const PropertyCard = ({ property }) => {
+const PropertyCard = ({ property }: { property: Property }) => {
 
     // getting the rates monthly, weekly and nightly
     const { rates } = property;

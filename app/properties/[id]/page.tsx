@@ -7,12 +7,13 @@ import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
 import { PropertyDetails } from '@/components/PropertyPage/PropertyDetails';
 import Spinner from '@/components/Spinner';
+import { Property } from '@/types/property';
 
 
 const PropertyPage = () => {
     const { id } = useParams();
 
-    const [property, setProperty] = useState(null);
+    const [property, setProperty] = useState<Property>();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

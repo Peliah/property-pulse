@@ -1,7 +1,8 @@
+import { Property } from "@/types/property"
 import { FaBath, FaBed, FaCheck, FaRulerCombined } from "react-icons/fa"
 import { FaLocationDot, FaXmark } from "react-icons/fa6"
 
-export const PropertyDetails = ({ property }) => {
+export const PropertyDetails = ({ property }: { property: Property }) => {
     return (
         <main>
             <div
@@ -96,7 +97,7 @@ export const PropertyDetails = ({ property }) => {
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none"
                 >
                     {
-                        property.amenities.map((amenity, index) => (
+                        property.amenities?.map((amenity, index) => (
                             <li key={index}>
                                 <FaCheck className="text-green-600 mr-2 mt-3" />{amenity}
                             </li>
