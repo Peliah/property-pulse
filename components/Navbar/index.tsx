@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { FaGoogle } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { ClientSafeProvider, getProviders, LiteralUnion, signIn, useSession } from 'next-auth/react';
+import { ClientSafeProvider, getProviders, LiteralUnion, signIn, signOut, useSession } from 'next-auth/react';
 import { BuiltInProviderType } from 'next-auth/providers/index';
 
 
@@ -207,15 +207,18 @@ const Navbar = () => {
                                             >
                                                 Saved Properties
                                             </Link>
-                                            <Link
-                                                href='#'
+                                            <button
+                                                onClick={() => {
+                                                    setisProfileOpen(false);
+                                                    signOut();
+                                                }}
                                                 className='block px-4 py-2 text-sm text-gray-700'
                                                 role='menuitem'
                                                 tabIndex={-1}
                                                 id='user-menu-item-2'
                                             >
                                                 Sign Out
-                                            </Link>
+                                            </button>
                                         </div>
                                     )
                                 }
